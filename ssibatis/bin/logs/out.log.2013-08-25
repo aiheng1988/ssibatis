@@ -1,0 +1,340 @@
+[INFO][2013-08-25 23:42:54]<org.springframework.test.context.TestContextManager:retrieveTestExecutionListeners> @TestExecutionListeners is not present for class [class cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: using defaults.
+[INFO][2013-08-25 23:42:54]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[INFO][2013-08-25 23:42:54]<org.springframework.context.support.AbstractApplicationContext:prepareRefresh> Refreshing org.springframework.context.support.GenericApplicationContext@b2fd8f: display name [org.springframework.context.support.GenericApplicationContext@b2fd8f]; startup date [Sun Aug 25 23:42:54 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:42:55]<org.springframework.context.support.AbstractApplicationContext:obtainFreshBeanFactory> Bean factory for application context [org.springframework.context.support.GenericApplicationContext@b2fd8f]: org.springframework.beans.factory.support.DefaultListableBeanFactory@193722c
+[INFO][2013-08-25 23:42:55]<org.springframework.beans.factory.support.DefaultListableBeanFactory:preInstantiateSingletons> Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@193722c: defining beans [sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:42:55]<org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:destroySingletons> Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@193722c: defining beans [sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[ERROR][2013-08-25 23:42:55]<org.springframework.test.context.TestContextManager:prepareTestInstance> Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@19b5217] to prepare test instance [cn.ahern88.ssibatis.dao.SqlMapContentDaoTest@2a6f16]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:201)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:255)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:111)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.invokeTestMethod(SpringJUnit4ClassRunner.java:148)
+	at org.junit.internal.runners.JUnit4ClassRunner.runMethods(JUnit4ClassRunner.java:61)
+	at org.junit.internal.runners.JUnit4ClassRunner$1.run(JUnit4ClassRunner.java:54)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:34)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:44)
+	at org.junit.internal.runners.JUnit4ClassRunner.run(JUnit4ClassRunner.java:52)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:97)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlMapContentDaoTest' defined in class path resource [applicationContext-test.xml]: Cannot resolve reference to bean 'sqlMapContentDao' while setting bean property 'sqlMapContentDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'sqlMapContentDao' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:275)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:104)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1245)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1010)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:472)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:429)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:728)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:380)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:84)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:42)
+	at org.springframework.test.context.TestContext.loadApplicationContext(TestContext.java:173)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:197)
+	... 17 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'sqlMapContentDao' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:387)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:971)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:246)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:269)
+	... 36 more
+[INFO][2013-08-25 23:45:03]<org.springframework.test.context.TestContextManager:retrieveTestExecutionListeners> @TestExecutionListeners is not present for class [class cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: using defaults.
+[INFO][2013-08-25 23:45:03]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext.xml]
+[INFO][2013-08-25 23:45:04]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[INFO][2013-08-25 23:45:04]<org.springframework.context.support.AbstractApplicationContext:prepareRefresh> Refreshing org.springframework.context.support.GenericApplicationContext@b2fd8f: display name [org.springframework.context.support.GenericApplicationContext@b2fd8f]; startup date [Sun Aug 25 23:45:04 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:45:04]<org.springframework.context.support.AbstractApplicationContext:obtainFreshBeanFactory> Bean factory for application context [org.springframework.context.support.GenericApplicationContext@b2fd8f]: org.springframework.beans.factory.support.DefaultListableBeanFactory@b8c8e6
+[INFO][2013-08-25 23:45:04]<org.springframework.core.io.support.PropertiesLoaderSupport:loadProperties> Loading properties file from class path resource [jdbc.properties]
+[INFO][2013-08-25 23:45:04]<org.springframework.beans.factory.support.DefaultListableBeanFactory:preInstantiateSingletons> Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b8c8e6: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:45:05]<com.mchange.v2.log.MLog:<clinit>> MLog clients using log4j logging.
+[INFO][2013-08-25 23:45:05]<com.mchange.v2.c3p0.C3P0Registry:banner> Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[INFO][2013-08-25 23:45:06]<org.springframework.context.support.AbstractApplicationContext:doClose> Closing org.springframework.context.support.GenericApplicationContext@b2fd8f: display name [org.springframework.context.support.GenericApplicationContext@b2fd8f]; startup date [Sun Aug 25 23:45:04 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:45:06]<org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:destroySingletons> Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b8c8e6: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:47:46]<org.springframework.test.context.TestContextManager:retrieveTestExecutionListeners> @TestExecutionListeners is not present for class [class cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: using defaults.
+[INFO][2013-08-25 23:47:47]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext.xml]
+[INFO][2013-08-25 23:47:47]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[INFO][2013-08-25 23:47:47]<org.springframework.context.support.AbstractApplicationContext:prepareRefresh> Refreshing org.springframework.context.support.GenericApplicationContext@b2fd8f: display name [org.springframework.context.support.GenericApplicationContext@b2fd8f]; startup date [Sun Aug 25 23:47:47 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:47:47]<org.springframework.context.support.AbstractApplicationContext:obtainFreshBeanFactory> Bean factory for application context [org.springframework.context.support.GenericApplicationContext@b2fd8f]: org.springframework.beans.factory.support.DefaultListableBeanFactory@b8c8e6
+[INFO][2013-08-25 23:47:47]<org.springframework.core.io.support.PropertiesLoaderSupport:loadProperties> Loading properties file from class path resource [jdbc.properties]
+[INFO][2013-08-25 23:47:47]<org.springframework.beans.factory.support.DefaultListableBeanFactory:preInstantiateSingletons> Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b8c8e6: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:47:48]<com.mchange.v2.log.MLog:<clinit>> MLog clients using log4j logging.
+[INFO][2013-08-25 23:47:48]<com.mchange.v2.c3p0.C3P0Registry:banner> Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[INFO][2013-08-25 23:47:48]<org.springframework.context.support.AbstractApplicationContext:doClose> Closing org.springframework.context.support.GenericApplicationContext@b2fd8f: display name [org.springframework.context.support.GenericApplicationContext@b2fd8f]; startup date [Sun Aug 25 23:47:47 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:47:48]<org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:destroySingletons> Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b8c8e6: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:49:20]<org.springframework.test.context.TestContextManager:retrieveTestExecutionListeners> @TestExecutionListeners is not present for class [class cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: using defaults.
+[INFO][2013-08-25 23:49:20]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext.xml]
+[INFO][2013-08-25 23:49:21]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[INFO][2013-08-25 23:49:21]<org.springframework.context.support.AbstractApplicationContext:prepareRefresh> Refreshing org.springframework.context.support.GenericApplicationContext@1decdec: display name [org.springframework.context.support.GenericApplicationContext@1decdec]; startup date [Sun Aug 25 23:49:21 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:49:21]<org.springframework.context.support.AbstractApplicationContext:obtainFreshBeanFactory> Bean factory for application context [org.springframework.context.support.GenericApplicationContext@1decdec]: org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e
+[INFO][2013-08-25 23:49:21]<org.springframework.core.io.support.PropertiesLoaderSupport:loadProperties> Loading properties file from class path resource [jdbc.properties]
+[INFO][2013-08-25 23:49:21]<org.springframework.beans.factory.support.DefaultListableBeanFactory:preInstantiateSingletons> Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:49:22]<com.mchange.v2.log.MLog:<clinit>> MLog clients using log4j logging.
+[INFO][2013-08-25 23:49:22]<com.mchange.v2.c3p0.C3P0Registry:banner> Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[INFO][2013-08-25 23:49:23]<org.springframework.context.support.AbstractApplicationContext:doClose> Closing org.springframework.context.support.GenericApplicationContext@1decdec: display name [org.springframework.context.support.GenericApplicationContext@1decdec]; startup date [Sun Aug 25 23:49:21 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:49:23]<org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:destroySingletons> Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:50:35]<org.springframework.test.context.TestContextManager:retrieveTestExecutionListeners> @TestExecutionListeners is not present for class [class cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: using defaults.
+[INFO][2013-08-25 23:50:35]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext.xml]
+[INFO][2013-08-25 23:50:35]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[INFO][2013-08-25 23:50:35]<org.springframework.context.support.AbstractApplicationContext:prepareRefresh> Refreshing org.springframework.context.support.GenericApplicationContext@c2a132: display name [org.springframework.context.support.GenericApplicationContext@c2a132]; startup date [Sun Aug 25 23:50:35 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:50:35]<org.springframework.context.support.AbstractApplicationContext:obtainFreshBeanFactory> Bean factory for application context [org.springframework.context.support.GenericApplicationContext@c2a132]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1342ba4
+[INFO][2013-08-25 23:50:36]<org.springframework.core.io.support.PropertiesLoaderSupport:loadProperties> Loading properties file from class path resource [jdbc.properties]
+[INFO][2013-08-25 23:50:36]<org.springframework.beans.factory.support.DefaultListableBeanFactory:preInstantiateSingletons> Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1342ba4: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:50:36]<com.mchange.v2.log.MLog:<clinit>> MLog clients using log4j logging.
+[INFO][2013-08-25 23:50:36]<com.mchange.v2.c3p0.C3P0Registry:banner> Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[INFO][2013-08-25 23:50:37]<org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:destroySingletons> Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1342ba4: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[ERROR][2013-08-25 23:50:37]<org.springframework.test.context.TestContextManager:prepareTestInstance> Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1342a67] to prepare test instance [cn.ahern88.ssibatis.dao.SqlMapContentDaoTest@1cbda0a]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:201)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:255)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:111)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.invokeTestMethod(SpringJUnit4ClassRunner.java:148)
+	at org.junit.internal.runners.JUnit4ClassRunner.runMethods(JUnit4ClassRunner.java:51)
+	at org.junit.internal.runners.JUnit4ClassRunner$1.run(JUnit4ClassRunner.java:44)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:27)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:37)
+	at org.junit.internal.runners.JUnit4ClassRunner.run(JUnit4ClassRunner.java:42)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:97)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlMapContentDaoTest' defined in class path resource [applicationContext-test.xml]: Error setting property values; nested exception is org.springframework.beans.NotWritablePropertyException: Invalid property 'sqlMapContentDao' of bean class [cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: Bean property 'sqlMapContentDao' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1279)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1010)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:472)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:429)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:728)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:380)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:84)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:42)
+	at org.springframework.test.context.TestContext.loadApplicationContext(TestContext.java:173)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:197)
+	... 17 more
+Caused by: org.springframework.beans.NotWritablePropertyException: Invalid property 'sqlMapContentDao' of bean class [cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: Bean property 'sqlMapContentDao' is not writable or has an invalid setter method. Does the parameter type of the setter match the return type of the getter?
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:801)
+	at org.springframework.beans.BeanWrapperImpl.setPropertyValue(BeanWrapperImpl.java:651)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:78)
+	at org.springframework.beans.AbstractPropertyAccessor.setPropertyValues(AbstractPropertyAccessor.java:59)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1276)
+	... 34 more
+[INFO][2013-08-25 23:51:09]<org.springframework.test.context.TestContextManager:retrieveTestExecutionListeners> @TestExecutionListeners is not present for class [class cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: using defaults.
+[INFO][2013-08-25 23:51:09]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext.xml]
+[INFO][2013-08-25 23:51:10]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[INFO][2013-08-25 23:51:10]<org.springframework.context.support.AbstractApplicationContext:prepareRefresh> Refreshing org.springframework.context.support.GenericApplicationContext@1decdec: display name [org.springframework.context.support.GenericApplicationContext@1decdec]; startup date [Sun Aug 25 23:51:10 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:51:10]<org.springframework.context.support.AbstractApplicationContext:obtainFreshBeanFactory> Bean factory for application context [org.springframework.context.support.GenericApplicationContext@1decdec]: org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e
+[INFO][2013-08-25 23:51:10]<org.springframework.core.io.support.PropertiesLoaderSupport:loadProperties> Loading properties file from class path resource [jdbc.properties]
+[INFO][2013-08-25 23:51:10]<org.springframework.beans.factory.support.DefaultListableBeanFactory:preInstantiateSingletons> Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:51:11]<com.mchange.v2.log.MLog:<clinit>> MLog clients using log4j logging.
+[INFO][2013-08-25 23:51:11]<com.mchange.v2.c3p0.C3P0Registry:banner> Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[INFO][2013-08-25 23:51:12]<org.springframework.context.support.AbstractApplicationContext:doClose> Closing org.springframework.context.support.GenericApplicationContext@1decdec: display name [org.springframework.context.support.GenericApplicationContext@1decdec]; startup date [Sun Aug 25 23:51:10 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:51:12]<org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:destroySingletons> Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:52:08]<org.springframework.test.context.TestContextManager:retrieveTestExecutionListeners> @TestExecutionListeners is not present for class [class cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: using defaults.
+[INFO][2013-08-25 23:52:08]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [cn/ahern88/ssibatis/dao/applicationContext.xml]
+[ERROR][2013-08-25 23:52:08]<org.springframework.test.context.TestContextManager:prepareTestInstance> Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@64dc11] to prepare test instance [cn.ahern88.ssibatis.dao.SqlMapContentDaoTest@1ac1fe4]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:201)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:255)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:111)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.invokeTestMethod(SpringJUnit4ClassRunner.java:148)
+	at org.junit.internal.runners.JUnit4ClassRunner.runMethods(JUnit4ClassRunner.java:51)
+	at org.junit.internal.runners.JUnit4ClassRunner$1.run(JUnit4ClassRunner.java:44)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:27)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:37)
+	at org.junit.internal.runners.JUnit4ClassRunner.run(JUnit4ClassRunner.java:42)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:97)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [cn/ahern88/ssibatis/dao/applicationContext.xml]; nested exception is java.io.FileNotFoundException: class path resource [cn/ahern88/ssibatis/dao/applicationContext.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:349)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:212)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:81)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:42)
+	at org.springframework.test.context.TestContext.loadApplicationContext(TestContext.java:173)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:197)
+	... 17 more
+Caused by: java.io.FileNotFoundException: class path resource [cn/ahern88/ssibatis/dao/applicationContext.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:143)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	... 26 more
+[INFO][2013-08-25 23:52:24]<org.springframework.test.context.TestContextManager:retrieveTestExecutionListeners> @TestExecutionListeners is not present for class [class cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: using defaults.
+[INFO][2013-08-25 23:52:24]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext.xml]
+[INFO][2013-08-25 23:52:24]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [cn/ahern88/ssibatis/dao/applicationContext-test.xml]
+[ERROR][2013-08-25 23:52:24]<org.springframework.test.context.TestContextManager:prepareTestInstance> Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@bf7190] to prepare test instance [cn.ahern88.ssibatis.dao.SqlMapContentDaoTest@b8bef7]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:201)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:255)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:111)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.invokeTestMethod(SpringJUnit4ClassRunner.java:148)
+	at org.junit.internal.runners.JUnit4ClassRunner.runMethods(JUnit4ClassRunner.java:51)
+	at org.junit.internal.runners.JUnit4ClassRunner$1.run(JUnit4ClassRunner.java:44)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:27)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:37)
+	at org.junit.internal.runners.JUnit4ClassRunner.run(JUnit4ClassRunner.java:42)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:97)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [cn/ahern88/ssibatis/dao/applicationContext-test.xml]; nested exception is java.io.FileNotFoundException: class path resource [cn/ahern88/ssibatis/dao/applicationContext-test.xml] cannot be opened because it does not exist
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:349)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:310)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:143)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:178)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:149)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:212)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:81)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:42)
+	at org.springframework.test.context.TestContext.loadApplicationContext(TestContext.java:173)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:197)
+	... 17 more
+Caused by: java.io.FileNotFoundException: class path resource [cn/ahern88/ssibatis/dao/applicationContext-test.xml] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:143)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:336)
+	... 26 more
+[INFO][2013-08-25 23:52:30]<org.springframework.test.context.TestContextManager:retrieveTestExecutionListeners> @TestExecutionListeners is not present for class [class cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: using defaults.
+[INFO][2013-08-25 23:52:30]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext.xml]
+[INFO][2013-08-25 23:52:31]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[INFO][2013-08-25 23:52:31]<org.springframework.context.support.AbstractApplicationContext:prepareRefresh> Refreshing org.springframework.context.support.GenericApplicationContext@1decdec: display name [org.springframework.context.support.GenericApplicationContext@1decdec]; startup date [Sun Aug 25 23:52:31 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:52:31]<org.springframework.context.support.AbstractApplicationContext:obtainFreshBeanFactory> Bean factory for application context [org.springframework.context.support.GenericApplicationContext@1decdec]: org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e
+[INFO][2013-08-25 23:52:31]<org.springframework.core.io.support.PropertiesLoaderSupport:loadProperties> Loading properties file from class path resource [jdbc.properties]
+[INFO][2013-08-25 23:52:31]<org.springframework.beans.factory.support.DefaultListableBeanFactory:preInstantiateSingletons> Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:52:32]<com.mchange.v2.log.MLog:<clinit>> MLog clients using log4j logging.
+[INFO][2013-08-25 23:52:32]<com.mchange.v2.c3p0.C3P0Registry:banner> Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[INFO][2013-08-25 23:52:33]<org.springframework.context.support.AbstractApplicationContext:doClose> Closing org.springframework.context.support.GenericApplicationContext@1decdec: display name [org.springframework.context.support.GenericApplicationContext@1decdec]; startup date [Sun Aug 25 23:52:31 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:52:33]<org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:destroySingletons> Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:53:00]<org.springframework.test.context.TestContextManager:retrieveTestExecutionListeners> @TestExecutionListeners is not present for class [class cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: using defaults.
+[INFO][2013-08-25 23:53:00]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext.xml]
+[INFO][2013-08-25 23:53:00]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[INFO][2013-08-25 23:53:00]<org.springframework.context.support.AbstractApplicationContext:prepareRefresh> Refreshing org.springframework.context.support.GenericApplicationContext@1decdec: display name [org.springframework.context.support.GenericApplicationContext@1decdec]; startup date [Sun Aug 25 23:53:00 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:53:00]<org.springframework.context.support.AbstractApplicationContext:obtainFreshBeanFactory> Bean factory for application context [org.springframework.context.support.GenericApplicationContext@1decdec]: org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e
+[INFO][2013-08-25 23:53:01]<org.springframework.core.io.support.PropertiesLoaderSupport:loadProperties> Loading properties file from class path resource [jdbc.properties]
+[INFO][2013-08-25 23:53:01]<org.springframework.beans.factory.support.DefaultListableBeanFactory:preInstantiateSingletons> Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:53:01]<com.mchange.v2.log.MLog:<clinit>> MLog clients using log4j logging.
+[INFO][2013-08-25 23:53:01]<com.mchange.v2.c3p0.C3P0Registry:banner> Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[INFO][2013-08-25 23:53:02]<org.springframework.context.support.AbstractApplicationContext:doClose> Closing org.springframework.context.support.GenericApplicationContext@1decdec: display name [org.springframework.context.support.GenericApplicationContext@1decdec]; startup date [Sun Aug 25 23:53:00 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:53:02]<org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:destroySingletons> Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:53:31]<org.springframework.test.context.TestContextManager:retrieveTestExecutionListeners> @TestExecutionListeners is not present for class [class cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: using defaults.
+[INFO][2013-08-25 23:53:31]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext.xml]
+[INFO][2013-08-25 23:53:31]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[INFO][2013-08-25 23:53:31]<org.springframework.context.support.AbstractApplicationContext:prepareRefresh> Refreshing org.springframework.context.support.GenericApplicationContext@1decdec: display name [org.springframework.context.support.GenericApplicationContext@1decdec]; startup date [Sun Aug 25 23:53:31 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:53:31]<org.springframework.context.support.AbstractApplicationContext:obtainFreshBeanFactory> Bean factory for application context [org.springframework.context.support.GenericApplicationContext@1decdec]: org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e
+[INFO][2013-08-25 23:53:31]<org.springframework.core.io.support.PropertiesLoaderSupport:loadProperties> Loading properties file from class path resource [jdbc.properties]
+[INFO][2013-08-25 23:53:31]<org.springframework.beans.factory.support.DefaultListableBeanFactory:preInstantiateSingletons> Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:53:32]<com.mchange.v2.log.MLog:<clinit>> MLog clients using log4j logging.
+[INFO][2013-08-25 23:53:32]<com.mchange.v2.c3p0.C3P0Registry:banner> Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[INFO][2013-08-25 23:53:33]<org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:destroySingletons> Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@29ab3e: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,sqlMapContentDaoTest,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[ERROR][2013-08-25 23:53:33]<org.springframework.test.context.TestContextManager:prepareTestInstance> Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1e0512a] to prepare test instance [cn.ahern88.ssibatis.dao.SqlMapContentDaoTest@1f0aecc]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:201)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:255)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:111)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.invokeTestMethod(SpringJUnit4ClassRunner.java:148)
+	at org.junit.internal.runners.JUnit4ClassRunner.runMethods(JUnit4ClassRunner.java:51)
+	at org.junit.internal.runners.JUnit4ClassRunner$1.run(JUnit4ClassRunner.java:44)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:27)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:37)
+	at org.junit.internal.runners.JUnit4ClassRunner.run(JUnit4ClassRunner.java:42)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:97)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlMapContentDaoTest' defined in class path resource [applicationContext-test.xml]: Cannot resolve reference to bean 'sqlMapContentDao1' while setting bean property 'sqlMapContentDao'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'sqlMapContentDao1' is defined
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:275)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:104)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1245)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1010)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:472)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory$1.run(AbstractAutowireCapableBeanFactory.java:409)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:380)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:264)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:261)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:429)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:728)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:380)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:84)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:42)
+	at org.springframework.test.context.TestContext.loadApplicationContext(TestContext.java:173)
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:197)
+	... 17 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'sqlMapContentDao1' is defined
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:387)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:971)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:246)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:185)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:164)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:269)
+	... 36 more
+[INFO][2013-08-25 23:56:24]<org.springframework.test.context.TestContextManager:retrieveTestExecutionListeners> @TestExecutionListeners is not present for class [class cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: using defaults.
+[INFO][2013-08-25 23:56:25]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext.xml]
+[INFO][2013-08-25 23:56:25]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[INFO][2013-08-25 23:56:25]<org.springframework.context.support.AbstractApplicationContext:prepareRefresh> Refreshing org.springframework.context.support.GenericApplicationContext@c2a132: display name [org.springframework.context.support.GenericApplicationContext@c2a132]; startup date [Sun Aug 25 23:56:25 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:56:25]<org.springframework.context.support.AbstractApplicationContext:obtainFreshBeanFactory> Bean factory for application context [org.springframework.context.support.GenericApplicationContext@c2a132]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1549f94
+[INFO][2013-08-25 23:56:25]<org.springframework.core.io.support.PropertiesLoaderSupport:loadProperties> Loading properties file from class path resource [jdbc.properties]
+[INFO][2013-08-25 23:56:25]<org.springframework.beans.factory.support.DefaultListableBeanFactory:preInstantiateSingletons> Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1549f94: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:56:25]<com.mchange.v2.log.MLog:<clinit>> MLog clients using log4j logging.
+[INFO][2013-08-25 23:56:25]<com.mchange.v2.c3p0.C3P0Registry:banner> Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[INFO][2013-08-25 23:56:26]<cn.ahern88.ssibatis.dao.SqlMapContentDao:insertContent> insert content [id:0, title:test title, content:test content, date:2013-08-25 23:56:26]
+[INFO][2013-08-25 23:56:26]<org.springframework.context.support.AbstractApplicationContext:doClose> Closing org.springframework.context.support.GenericApplicationContext@c2a132: display name [org.springframework.context.support.GenericApplicationContext@c2a132]; startup date [Sun Aug 25 23:56:25 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:56:26]<org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:destroySingletons> Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1549f94: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:57:11]<org.springframework.test.context.TestContextManager:retrieveTestExecutionListeners> @TestExecutionListeners is not present for class [class cn.ahern88.ssibatis.dao.SqlMapContentDaoTest]: using defaults.
+[INFO][2013-08-25 23:57:11]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext.xml]
+[INFO][2013-08-25 23:57:11]<org.springframework.beans.factory.xml.XmlBeanDefinitionReader:loadBeanDefinitions> Loading XML bean definitions from class path resource [applicationContext-test.xml]
+[INFO][2013-08-25 23:57:11]<org.springframework.context.support.AbstractApplicationContext:prepareRefresh> Refreshing org.springframework.context.support.GenericApplicationContext@c2a132: display name [org.springframework.context.support.GenericApplicationContext@c2a132]; startup date [Sun Aug 25 23:57:11 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:57:11]<org.springframework.context.support.AbstractApplicationContext:obtainFreshBeanFactory> Bean factory for application context [org.springframework.context.support.GenericApplicationContext@c2a132]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1549f94
+[INFO][2013-08-25 23:57:12]<org.springframework.core.io.support.PropertiesLoaderSupport:loadProperties> Loading properties file from class path resource [jdbc.properties]
+[INFO][2013-08-25 23:57:12]<org.springframework.beans.factory.support.DefaultListableBeanFactory:preInstantiateSingletons> Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1549f94: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy
+[INFO][2013-08-25 23:57:12]<com.mchange.v2.log.MLog:<clinit>> MLog clients using log4j logging.
+[INFO][2013-08-25 23:57:13]<com.mchange.v2.c3p0.C3P0Registry:banner> Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[INFO][2013-08-25 23:57:13]<cn.ahern88.ssibatis.dao.SqlMapContentDao:insertContent> insert content [id:0, title:test title, content:test content, date:2013-08-25 23:57:13]
+[INFO][2013-08-25 23:57:13]<org.springframework.context.support.AbstractApplicationContext:doClose> Closing org.springframework.context.support.GenericApplicationContext@c2a132: display name [org.springframework.context.support.GenericApplicationContext@c2a132]; startup date [Sun Aug 25 23:57:11 CST 2013]; root of context hierarchy
+[INFO][2013-08-25 23:57:13]<org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:destroySingletons> Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1549f94: defining beans [indexAction,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,dataSource,sqlMapClient,transactionManager,txAdvice,org.springframework.aop.config.internalAutoProxyCreator,serviceOperation,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,sqlMapContentDao,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor]; root of factory hierarchy

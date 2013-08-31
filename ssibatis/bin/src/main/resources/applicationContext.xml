@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+     		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+     		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+	<bean name="indexAction" class="cn.ahern88.ssibatis.web.IndexAction" scope="prototype">
+		<property name="contentService" ref="contentService"></property>
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+  		<property name="locations" value="classpath:jdbc.properties"/>
+	</bean>
+	
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClass}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="user" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}" />
+		<property name="minPoolSize" value="${jdbc.minPoolSize}" />
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}" />
+		<property name="maxIdleTime" value="${jdbc.maxIdleTime}" />
+		<property name="checkoutTimeout" value="${jdbc.checkoutTimeout}" />
+	</bean>
+
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocation" value="classpath:sqlmap-config.xml" />
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+	</bean>
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+	  	<tx:attributes>
+	    	<tx:method name="get*" read-only="true" propagation="SUPPORTS"/>
+	    	<tx:method name="is*" read-only="true" propagation="SUPPORTS"/>
+	    	<tx:method name="load*" read-only="true" propagation="SUPPORTS"/>
+	    	<tx:method name="list*" read-only="true" propagation="SUPPORTS"/>
+	    	<tx:method name="*" propagation="REQUIRED"/>
+	  	</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut id="serviceOperation" expression="execution(* cn.ahern88.ssibatis.service.*.*(..))"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation"/>
+  	</aop:config>
+	
+	<bean id="sqlMapContentDao" class="cn.ahern88.ssibatis.dao.SqlMapContentDao">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	
+	<bean id="contentService" class="cn.ahern88.ssibatis.service.ContentService">
+		<property name="sqlMapContentDao" ref="sqlMapContentDao" />
+	</bean>
+	
+</beans>

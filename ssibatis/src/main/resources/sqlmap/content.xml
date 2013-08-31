@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"sql-map-2.dtd">
+
+<sqlMap namespace="content">
+
+	<typeAlias alias="content" type="cn.ahern88.ssibatis.entity.Content"/>
+	<typeAlias alias="page" type="cn.ahern88.ssibatis.commons.Page"/>
+	
+	<resultMap class="content" id="contents">
+		<result property="id" column="id" javaType="java.lang.Integer"/>
+		<result property="title" column="title" javaType="java.lang.String"/>
+		<result property="email" column="email" javaType="java.lang.String"/>
+		<result property="url" column="url" javaType="java.lang.String"/>
+		<result property="content" column="content" javaType="java.lang.String"/>
+		<result property="date" column="date" javaType="java.util.Date"/>
+	</resultMap>
+	
+	<insert id="insertContent" parameterClass="content">
+		<![CDATA[
+		INSERT INTO content (id, title, email, url, content, date) VALUES 
+			(#id#, #title#, #email#, #url#, #content#, #date#)
+		]]>
+		<selectKey resultClass="int" keyProperty="id">
+			<![CDATA[
+			SELECT @@IDENTITY AS id
+			]]>
+		</selectKey>
+	</insert>
+	
+	<select id="queryContentById" parameterClass="content" resultClass="content">
+		<![CDATA[
+		SELECT * FROM content WHERE id = #id#
+		]]>
+	</select>
+	
+	<delete id="deleteContentById" parameterClass="content">
+		<![CDATA[
+		DELETE FROM content WHERE id = #id#
+		]]>
+	</delete>
+	
+	<select id="queryAllContent" resultMap="contents">
+		<![CDATA[
+		SELECT * FROM content
+		]]>
+	</select>
+	
+	<update id="updateContent" parameterClass="content">
+		<![CDATA[
+		UPDATE content SET title=#title#, email=#email#, url=#url#, content=#content#, date=#date#
+		WHERE id=#id#
+		]]>
+	</update>
+	
+	<select id="queryContentsByPage" parameterClass="page" resultMap="contents">
+		<![CDATA[
+		SELECT * FROM content ORDER BY id DESC LIMIT #begin#,#pagesize#
+		]]>
+	</select>
+	
+	<select id="count" resultClass="java.lang.Integer">
+		<![CDATA[
+		SELECT count(*) FROM content
+		]]>
+	</select>
+	
+</sqlMap>

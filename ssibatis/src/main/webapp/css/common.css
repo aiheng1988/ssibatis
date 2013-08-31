@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+.dark_btn, .dark_btn:hover {
+	background:#313131; 
+	color: #fff;
+}
+.send_btn, .send_btn:hover {
+	color: #fff;
+	background:#d00b01 !important;
+	text-decoration:none;
+}
+
+.header {
+	padding:36px 0 21px 0;
+	background:#fff;
+	border-top:5px #d00b01 solid;
+}
+
+.page_container {
+	padding-bottom:40px;
+	background:#FFF;
+}
+
+.footer_bottom {
+	background:#1e1e1e;
+	margin-top:20px;
+	padding:23px 0 26px 0;
+}
+
+.copyright {
+	color:#444444;
+}
+#mytag ul{
+	list-style-type: none;
+}
